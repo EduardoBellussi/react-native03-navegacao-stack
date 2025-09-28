@@ -1,12 +1,15 @@
 import React from 'react';
 import { Pressable, View, Text } from 'react-native';
 
-import { styles } from './HomeStyle';
+import { styles } from './ContaStyle';
 
-export function Home({navigation}:any) {
+export function Servicos({navigation}:any) {
 
+  function navToHome(){
+    navigation.navigate('Home');
+  }
   function navToGallery(){
-    navigation.navigate('gallery');
+    navigation.navigate('Gallery');
   }
   function navToConta(){
     navigation.navigate('Conta');
@@ -14,12 +17,12 @@ export function Home({navigation}:any) {
   function navToCriarConta(){
     navigation.navigate('CriarConta');
   }
-  function navToServicos(){
-    navigation.navigate('Servicos');
-  }
   return (
     <View style={styles.container}>
       <Text>HOME</Text>
+        <Pressable style={styles.botao} onPress={navToHome}>
+            <Text style={styles.textoBotao}>Ir para a Galleria</Text>
+        </Pressable>
         <Pressable style={styles.botao} onPress={navToGallery}>
             <Text style={styles.textoBotao}>Ir para a Galleria</Text>
         </Pressable>
@@ -27,9 +30,6 @@ export function Home({navigation}:any) {
             <Text style={styles.textoBotao}>Ir para a Galleria</Text>
         </Pressable>
         <Pressable style={styles.botao} onPress={navToCriarConta}>
-            <Text style={styles.textoBotao}>Ir para a Galleria</Text>
-        </Pressable>
-        <Pressable style={styles.botao} onPress={navToServicos}>
             <Text style={styles.textoBotao}>Ir para a Galleria</Text>
         </Pressable>
     </View>
